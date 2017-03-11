@@ -1,0 +1,13 @@
+<h1>Search for Criminal</h1>
+
+<%= form_for :criminal, url: criminals_find_path do |f| %>
+  <p>
+    <%= f.label :ic %><br>
+    <%= f.text_field :ic %>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', criminals_path %>

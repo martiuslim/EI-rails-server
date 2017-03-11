@@ -1,0 +1,31 @@
+<h1>Criminal DB</h1>
+
+
+<%= link_to 'New Criminal', new_criminal_path %>
+
+<%= form_tag("/criminals/find", method: "get") do %>
+  <br>
+  <%= label_tag(:ic, "Enter IC") %>
+  <%= text_field_tag(:ic) %><br>
+  <%= submit_tag("Search for Criminal") %>
+<% end %>
+
+<br>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>IC</th>
+    <th>Offence</th>
+  </tr>
+ 
+  <% @criminals.each do |criminal| %>
+    <tr>
+      <td><%= criminal.name %></td>
+      <td><%= criminal.ic %></td>
+      <td><%= criminal.offence %></td>
+      <td><%= link_to 'Show', criminal_path(criminal) %></td>
+      <td><%= link_to 'Delete', criminal_path(criminal), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
