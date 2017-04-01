@@ -26,6 +26,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: criminals_system_development
+  host: localhost
   pool: 5
   username: criminals_system
   password: secret
